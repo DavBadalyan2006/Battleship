@@ -1,11 +1,10 @@
 package com.example.battleship;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -21,9 +20,13 @@ public class MainMenuActivity extends AppCompatActivity {
         onlineUsersButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this, OnlineUsersActivity.class);
-                startActivity(intent);
+                startOnlineUsersActivity();
             }
         });
+    }
+
+    private void startOnlineUsersActivity() {
+        Intent intent = new Intent(MainMenuActivity.this, OnlineUsersActivity.class);
+        startActivity(intent);
     }
 }
