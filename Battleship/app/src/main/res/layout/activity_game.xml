@@ -1,50 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".GameActivity">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/opponent_status_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Opponent Status"
-        android:padding="8dp"/>
-
-    <GridLayout
-        android:id="@+id/opponent_board"
+    <GridView
+        android:id="@+id/player_board_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:columnCount="10"
-        android:rowCount="10"
-        android:background="@drawable/board_background"
-        android:padding="16dp" />
-
-    <TextView
-        android:id="@+id/player_status_text"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player Status"
-        android:padding="8dp"/>
+        android:numColumns="10" />
 
-    <GridLayout
-        android:id="@+id/player_board"
+    <GridView
+        android:id="@+id/opponent_board_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:columnCount="10"
-        android:rowCount="10"
-        android:background="@drawable/board_background"
-        android:padding="16dp" />
+        android:layout_height="wrap_content"
+        android:numColumns="10" />
 
     <TextView
-        android:id="@+id/timer"
+        android:id="@+id/setup_timer_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Timer"
-        android:padding="8dp"/>
+        android:text="Setup Timer" />
+
+    <TextView
+        android:id="@+id/game_timer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Timer" />
+
+    <TextView
+        android:id="@+id/game_status_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Game Status" />
+
+    <Button
+        android:id="@+id/end_turn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Turn" />
+
 </LinearLayout>

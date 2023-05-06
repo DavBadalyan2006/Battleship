@@ -2,11 +2,12 @@ package com.example.battleship;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.battleship.gamelogic.User;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,7 +21,7 @@ import javax.annotation.Nullable;
 
 public class OnlineUsersActivity extends AppCompatActivity {
 
-    private ListView onlineUsersListView;
+    private RecyclerView onlineUsersRecyclerView;
     private OnlineUsersAdapter onlineUsersAdapter;
     private FirebaseFirestore db;
 
@@ -29,9 +30,11 @@ public class OnlineUsersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_online_users);
 
-        onlineUsersListView = findViewById(R.id.onlineUsersListView);
-        onlineUsersAdapter = new OnlineUsersAdapter(this, new ArrayList<User>());
-        onlineUsersListView.setAdapter(onlineUsersAdapter);
+        onlineUsersRecyclerView = findViewById(R.id.onlineUsersRecyclerView);
+        onlineUsersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        onlineUsersAdapter = new OnlineUsersAdapter(new ArrayList<User>(), this);
+        onlineUsersRecyclerView.setAdapter(onlineUsersAdapter);
 
         db = FirebaseFirestore.getInstance();
 
