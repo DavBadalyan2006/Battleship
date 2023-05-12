@@ -55,7 +55,7 @@ public class BoardAdapter extends BaseAdapter {
                 imageView.setImageResource(R.drawable.ship_cell);
                 break;
             case Board.HIT:
-                imageView.setImageResource(R.drawable.hit_ship_cell);
+                imageView.setImageResource(R.drawable.hit_cell);
                 break;
             case Board.MISS:
                 imageView.setImageResource(R.drawable.miss_cell);
